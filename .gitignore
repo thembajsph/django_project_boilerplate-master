@@ -1,0 +1,14 @@
+env
+**/*.pyc
+**/__pycache__
+#media_root
+#static_root
+.DS_Store
+#*.sqlite3
+
+
+# Accept these files in the repository
+!.gitignore
+!.travis.yml
+/.env
+/.vscode
