@@ -1,7 +1,7 @@
 from .base import *
 
 DEBUG = True
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0']
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'themba-e-commerce-shop.herokuapp.com']
 
 INSTALLED_APPS += [
     'debug_toolbar'
