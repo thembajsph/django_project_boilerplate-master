@@ -1,4 +1,6 @@
 import os
+
+import django_heroku
 from decouple import config
 # import django_heroku
 
@@ -82,4 +84,5 @@ LOGIN_REDIRECT_URL = '/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
+django_heroku.settings(locals(), staticfiles=False)
