@@ -1,4 +1,4 @@
 release: python3 manage.py migrate
-web: gunicorn tjecommerce.wsgi --preload --log-file -
+web: python manage.py collectstatic --no-input; gunicorn tjecommerce.wsgi --preload --log-file -
 
 
