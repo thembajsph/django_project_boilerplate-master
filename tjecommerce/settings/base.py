@@ -26,7 +26,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django_countries',
 
-    'core'
+    'core',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -75,6 +76,18 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_in_env')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+# if you want aws to handle your static files for you use the following:
+# STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+# To upload your media files to S3 set:
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+# STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+# ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+
+
 # Auth
 
 AUTHENTICATION_BACKENDS = (
@@ -91,6 +104,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # django_heroku.settings(locals())
 django_heroku.settings(locals(), staticfiles=False)
 
+# settings to debug code 500 error in terminal
 # LOGGING = {
 #     'version': 1,
 #     'disable_existing_loggers': False,
